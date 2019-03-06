@@ -1,18 +1,23 @@
+//Imports
 import React, { Component } from 'react';
 import './App.css';
 import Bootstrap from 'bootstrap/dist/css/bootstrap.css';
 import {
   Container, Row, Col,
   Navbar, Nav, NavDropdown,
-  Form, FormControl, Button
+  Form, FormControl, Button, 
+  Jumbotron
 } from 'react-bootstrap';
 
+//the App
 class App extends Component {
   render() {
     return (
 
-      <Container fluid id="mainContainer">        
-          <Container fluid>
+      <Container fluid id="main_container">        
+          
+          
+          <Container fluid id="nav_container">
             <Navbar bg="light" expand="lg">
               <Navbar.Brand href="#home">Potential Image</Navbar.Brand>
               <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -32,13 +37,22 @@ class App extends Component {
             </Navbar>
           </Container>
           
+          
+          
+          <Jumbotron fluid>
+          <Container>
+            <h1>Fluid jumbotron</h1>
+            <p>
+              This is a modified jumbotron that occupies the entire horizontal space of
+              its parent.
+            </p>
+          </Container>
+          </Jumbotron>
 
 
-
-        
 
       </Container>
-    );
+    );//End of main_container
   }
 }
 
