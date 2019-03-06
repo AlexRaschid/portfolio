@@ -1,22 +1,17 @@
+/* Red Border for Dev purposes */
 *{
   border: 1px;
   border-style: solid;
   border-color: red;
 }
 
-.navbar, #mainContainer{
-  align: center;
+
+/* Navbar styles */
+#mainContainer{
+  text-align: right;
+  background-color: white;
   margin: 0px;
   padding: 0px;
 }
+ 
 
-
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
