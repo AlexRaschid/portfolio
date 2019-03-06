@@ -6,7 +6,7 @@ import {
   Container, Row, Col,
   Navbar, Nav, NavDropdown,
   Form, FormControl, Button, 
-  Jumbotron
+  Jumbotron, Image
 } from 'react-bootstrap';
 
 //the App
@@ -42,13 +42,21 @@ class App extends Component {
           
           
           
-          <Jumbotron fluid>
+          <Jumbotron>
           <Container>
-            <h1>Fluid jumbotron</h1>
-            <p>
-              This is a modified jumbotron that occupies the entire horizontal space of
-              its parent.
-            </p>
+            <Row>
+              <Col md={3}>
+              <Image fluid src="https://avatars0.githubusercontent.com/u/9421693?s=460&v=4" roundedCircle />
+              </Col>
+              <Col md={9}>
+                <p>
+                  Blah blah blah mock up text for this bio or something. This is a modified jumbotron that occupies the entire horizontal space of
+                  its parent.
+                </p>
+              </Col>
+            </Row>
+            
+              
           </Container>
           </Jumbotron>
 
