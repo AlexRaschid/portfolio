@@ -6,9 +6,12 @@ import {
   Container, Row, Col,
   Navbar, Nav, NavDropdown,
   Form, FormControl, Button, 
-  Jumbotron, Image, Table
+  Jumbotron, Image, Table,
+  CardDeck, Card
 } from 'react-bootstrap';
 
+
+var default_img = "https://avatars0.githubusercontent.com/u/9421693?s=460&v=4";
 //the App
 class App extends Component {
   render() {
@@ -46,7 +49,7 @@ class App extends Component {
           <Container>
             <Row>
               <Col md={3}>
-              <Image fluid src="https://avatars0.githubusercontent.com/u/9421693?s=460&v=4" roundedCircle />
+              <Image fluid src={default_img} roundedCircle />
               </Col>
               <Col md={9}>
                 <p>
@@ -61,20 +64,22 @@ class App extends Component {
           </Jumbotron>
 
 
-          <Table bordered>
-            <thead>
-              <tr>
-                <th>My Projects</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>2</td>
-                <td>Jacob</td>
-                <td>Thornton</td>
-              </tr>
-            </tbody>
-        </Table>
+          <CardDeck>
+            <Container>
+              <Card>
+                <Card.Img variant="top" src={default_img} fluid thumbnail />
+                <Card.Body>
+                  <Card.Title>Card Title</Card.Title>
+                  <Card.Text>
+                    Some quick example text to build on the card title and make up the bulk of
+                    the card's content.
+                  </Card.Text>
+                  <Button variant="primary">Go somewhere</Button>
+                </Card.Body>
+              </Card>
+            </Container>
+            
+          </CardDeck>
 
 
 
