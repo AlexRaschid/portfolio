@@ -5,7 +5,10 @@
   border-color: red;
 }
 
-
+/* Jumbotron Styles*/
+#my_bio{
+  margin-bottom: 0;
+}
 /* Navbar styles */
 #mainContainer{
   text-align: right;
@@ -13,5 +16,10 @@
   margin: 0px;
   padding: 0px;
 }
+
+
+
+
+
  
 
