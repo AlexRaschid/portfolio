@@ -6,7 +6,7 @@ import {
   Container, Row, Col,
   Navbar, Nav, NavDropdown,
   Form, FormControl, Button, 
-  Jumbotron, Image
+  Jumbotron, Image, Table
 } from 'react-bootstrap';
 
 //the App
@@ -42,7 +42,7 @@ class App extends Component {
           
           
           
-          <Jumbotron>
+          <Jumbotron id="my_bio">
           <Container>
             <Row>
               <Col md={3}>
@@ -59,6 +59,22 @@ class App extends Component {
               
           </Container>
           </Jumbotron>
+
+
+          <Table bordered>
+            <thead>
+              <tr>
+                <th>My Projects</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>2</td>
+                <td>Jacob</td>
+                <td>Thornton</td>
+              </tr>
+            </tbody>
+        </Table>
 
 
 
