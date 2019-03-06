@@ -7,7 +7,7 @@ import {
   Navbar, Nav, NavDropdown,
   Form, FormControl, Button, 
   Jumbotron, Image, Table,
-  CardDeck, Card
+  CardColumns, Card
 } from 'react-bootstrap';
 
 
@@ -64,10 +64,35 @@ class App extends Component {
           </Jumbotron>
 
 
-          <CardDeck>
+          <CardColumns>
             <Container>
               <Card>
-                <Card.Img variant="top" src={default_img} fluid thumbnail />
+                <Card.Img variant="top" src={default_img}/>
+                <Card.Body>
+                  <Card.Title>Card Title</Card.Title>
+                  <Card.Text>
+                    Some quick example text to build on the card title and make up the bulk of
+                    the card's content.
+                  </Card.Text>
+                  <Button variant="primary">Go somewhere</Button>
+                </Card.Body>
+              </Card>
+
+
+              <Card>
+                <Card.Img variant="top" src={default_img}/>
+                <Card.Body>
+                  <Card.Title>Card Title</Card.Title>
+                  <Card.Text>
+                    Some quick example text to build on the card title and make up the bulk of
+                    the card's content.
+                  </Card.Text>
+                  <Button variant="primary">Go somewhere</Button>
+                </Card.Body>
+              </Card>
+
+              <Card>
+                <Card.Img variant="top" src={default_img}/>
                 <Card.Body>
                   <Card.Title>Card Title</Card.Title>
                   <Card.Text>
@@ -79,7 +104,7 @@ class App extends Component {
               </Card>
             </Container>
             
-          </CardDeck>
+          </CardColumns>
 
 
 
