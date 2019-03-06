@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import style from 'bootstrap/dist/css/bootstrap.css';
+import Bootstrap from 'bootstrap/dist/css/bootstrap.css';
 import {
   Container, Row, Col,
   Navbar, Nav, NavDropdown,
@@ -11,13 +11,12 @@ class App extends Component {
   render() {
     return (
 
-      <Container>
-        <Container>
+      <Container fluid id="mainContainer">        
           <Navbar bg="light" expand="lg">
             <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
-              <Nav className="mr-auto">
+              <Nav className="ml-auto navbar-right navbarItems">
                 <Nav.Link href="#home">Home</Nav.Link>
                 <Nav.Link href="#link">Link</Nav.Link>
                 <NavDropdown title="Dropdown" id="basic-nav-dropdown">
@@ -30,7 +29,7 @@ class App extends Component {
               </Nav>
             </Navbar.Collapse>
           </Navbar>
-        </Container>
+        
 
       </Container>
     );
