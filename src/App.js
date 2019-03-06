@@ -48,10 +48,10 @@ class App extends Component {
           <Jumbotron id="my_bio">
           <Container>
             <Row>
-              <Col md={3}>
+              <Col md={3} sm={3} xs={12}>
               <Image fluid src={default_img} roundedCircle />
               </Col>
-              <Col md={9}>
+              <Col md={9} sm={9}>
                 <p>
                   Blah blah blah mock up text for this bio or something. This is a modified jumbotron that occupies the entire horizontal space of
                   its parent.
