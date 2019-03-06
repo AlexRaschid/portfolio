@@ -1,13 +1,16 @@
-.navbar, .container {
-  max-width: 100%;
+*{
+  border: 1px;
+  border-style: solid;
+  border-color: red;
+}
+
+.navbar, #mainContainer{
+  align: center;
   margin: 0px;
   padding: 0px;
 }
 
-.navbar {
-  margin: 0px;
-  padding: 0px;
-}
+
 
 @keyframes App-logo-spin {
   from {
