@@ -17,8 +17,9 @@ class App extends Component {
       <Container fluid id="main_container">        
           
           
-          <Container fluid id="nav_container">
+          
             <Navbar bg="light" expand="lg">
+            <Container fluid id="nav_container">
               <Navbar.Brand href="#home">Potential Image</Navbar.Brand>
               <Navbar.Toggle aria-controls="basic-navbar-nav" />
               <Navbar.Collapse id="basic-navbar-nav">
@@ -34,8 +35,10 @@ class App extends Component {
                   </NavDropdown>
                 </Nav>
               </Navbar.Collapse>
+              </Container>
             </Navbar>
-          </Container>
+
+          
           
           
           
