@@ -1,13 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {
-    Container, Row, Col,
-    Navbar, Nav, NavDropdown,
-    Form, FormControl, Button, 
-    Jumbotron, Image, Table,
-    CardColumns, Card
-  } from 'react-bootstrap';
-  import Bootstrap from 'bootstrap/dist/css/bootstrap.css';
+import { Container, Button,
+         CardColumns, Card } from 'react-bootstrap';
+import Bootstrap from 'bootstrap/dist/css/bootstrap.css';
 
 export class MyPortfolio extends React.Component{
 
