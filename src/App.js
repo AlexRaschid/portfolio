@@ -27,6 +27,8 @@ export default class App extends Component {
 
             <MyBio default_img={default_img}/>
 
+            <MyPortfolio default_img={default_img} />
+
            
 
 
