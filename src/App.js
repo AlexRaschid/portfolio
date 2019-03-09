@@ -11,7 +11,7 @@ import {MyPortfolio} from './my-components/MyPortfolio.js';
 
 
 
-var default_img = "https://avatars0.githubusercontent.com/u/9421693?s=460&v=4";
+var default_img = "https://avatars3.githubusercontent.com/u/9421693?s=400&u=71ab55e0bb4775a84bddbf214880dd7ebec78430&v=4";
 //the App
 export default class App extends Component {
   render() {
