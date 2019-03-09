@@ -1,4 +1,5 @@
 import React from 'react';
+import './MyRow.css';
 import ReactDOM from 'react-dom';
 import { Row, Col, Image, Button } from 'react-bootstrap';
 import Bootstrap from 'bootstrap/dist/css/bootstrap.css';
@@ -20,8 +21,12 @@ export class MyRow extends React.Component{
                         </p>
                     </Row>
                     <Row>
-                        <Button href="www.github.com/alexraschid">Link</Button>
-                        <Button>Resume</Button>
+                        <Col className='bioButtons' xs={6}>
+                            <Button href="www.github.com/alexraschid">Link</Button>
+                        </Col>
+                        <Col className='bioButtons' xs={6}>
+                            <Button>Resume</Button>
+                        </Col >
                     </Row>
                 
                 </Col>
