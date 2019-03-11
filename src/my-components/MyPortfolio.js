@@ -9,33 +9,39 @@ import {CardContent} from './card-components/CardContent';
 export class MyPortfolio extends React.Component{
     constructor(props){
       super(props);
+      this.state = { //V Insert Card Data here
+        card_info: [{props}],
+      }
     }
 
-
-    renderCard(){
+    renderProject(){
       return(
         <CardContent default_img={this.props.default_img}/>
       );
-
-
-
-
-
     }
 
+
+    renderPortfolio(){
+      
+      return(
+        <CardColumns>
+            <Container>
+              {this.state.card_info.map(
+                (card) => (
+                  <CardContent 
+                    default_img={card.props.default_img}
+                  />
+                ))
+              }
+            </Container> 
+          </CardColumns>
+      );
+    }
 
 
     render(){
         return(
-            <CardColumns>
-            <Container>
-              
-              {this.renderCard()}
-              
-
-            </Container>
-            
-          </CardColumns>
+            this.renderPortfolio()
 
         );
     }
