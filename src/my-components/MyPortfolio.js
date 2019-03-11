@@ -9,26 +9,20 @@ import {CardContent} from './card-components/CardContent';
 export class MyPortfolio extends React.Component{
     constructor(props){
       super(props);
-      this.state = { //V Insert Card Data here
-        card_info: [{props},{props},{props}],
+      this.state = { //V Insert Project Data here
+                      //TODO: Insert the firebase data for projects here
+        projects: [{props},{props},{props}],
       }
     }
 
-    renderProject(){
-      return(
-        <CardContent default_img={this.props.default_img}/>
-      );
-    }
-
-
-    renderPortfolio(){
+    renderProjects(){
       
+      //TODO: Some Renaming at some point
       return(
         <CardColumns>
             <Container>
-              {this.state.card_info.map(
+              {this.state.projects.map(
                 (card) => (
-                  
                   <CardContent 
                     key = { [1,2,3] }
                     default_img={card.props.default_img}
@@ -43,7 +37,7 @@ export class MyPortfolio extends React.Component{
 
     render(){
         return(
-            this.renderPortfolio()
+            this.renderProjects()
 
         );
     }
