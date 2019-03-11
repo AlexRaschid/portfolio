@@ -4,6 +4,9 @@ import { Container, Button,
          CardColumns, Card } from 'react-bootstrap';
 import Bootstrap from 'bootstrap/dist/css/bootstrap.css';
 import {CardContent} from './card-components/CardContent';
+import firebase from '../firebase.js';
+
+const projectsRef = firebase.database().ref("/projects/");
 
 
 export class MyPortfolio extends React.Component{
@@ -11,8 +14,20 @@ export class MyPortfolio extends React.Component{
       super(props);
       this.state = { //V Insert Project Data here
                       //TODO: Insert the firebase data for projects here
-        projects: [{props},{props},{props}],
+        projects: [],
+        
       }
+      console.log(this.projects);
+    }
+
+    componentDidMount(){
+      projectsRef.on('value', (snapshot) => {
+        console.log(snapshot.child("bathroom_finder/"));
+        console.log("Where is this?");
+          this.setState({
+            projects: snapshot.val()
+          });
+      });
     }
 
     renderProjects(){
@@ -24,7 +39,7 @@ export class MyPortfolio extends React.Component{
               {this.state.projects.map(
                 (card) => (
                   <CardContent 
-                    key = { [1,2,3] }
+                    key = { [1] }
                     default_img={card.props.default_img}
                   />
                 ))
