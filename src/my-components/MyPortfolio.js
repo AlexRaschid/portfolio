@@ -10,7 +10,7 @@ export class MyPortfolio extends React.Component{
     constructor(props){
       super(props);
       this.state = { //V Insert Card Data here
-        card_info: [{props}],
+        card_info: [{props},{props},{props}],
       }
     }
 
@@ -28,7 +28,9 @@ export class MyPortfolio extends React.Component{
             <Container>
               {this.state.card_info.map(
                 (card) => (
+                  
                   <CardContent 
+                    key = { [1,2,3] }
                     default_img={card.props.default_img}
                   />
                 ))
