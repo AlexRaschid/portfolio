@@ -3,49 +3,36 @@ import ReactDOM from 'react-dom';
 import { Container, Button,
          CardColumns, Card } from 'react-bootstrap';
 import Bootstrap from 'bootstrap/dist/css/bootstrap.css';
+import {CardContent} from './card-components/CardContent';
+
 
 export class MyPortfolio extends React.Component{
+    constructor(props){
+      super(props);
+    }
+
+
+    renderCard(){
+      return(
+        <CardContent default_img={this.props.default_img}/>
+      );
+
+
+
+
+
+    }
+
+
 
     render(){
         return(
             <CardColumns>
             <Container>
-              <Card>
-                <Card.Img variant="top" src={this.props.default_img}/>
-                <Card.Body>
-                  <Card.Title>Card Title</Card.Title>
-                  <Card.Text>
-                    Some quick example text to build on the card title and make up the bulk of
-                    the card's content.
-                  </Card.Text>
-                  <Button variant="primary">Go somewhere</Button>
-                </Card.Body>
-              </Card>
+              
+              {this.renderCard()}
+              
 
-
-              <Card>
-                <Card.Img variant="top" src={this.props.default_img}/>
-                <Card.Body>
-                  <Card.Title>Card Title</Card.Title>
-                  <Card.Text>
-                    Some quick example text to build on the card title and make up the bulk of
-                    the card's content.
-                  </Card.Text>
-                  <Button variant="primary">Go somewhere</Button>
-                </Card.Body>
-              </Card>
-
-              <Card>
-                <Card.Img variant="top" src={this.props.default_img}/>
-                <Card.Body>
-                  <Card.Title>Card Title</Card.Title>
-                  <Card.Text>
-                    Some quick example text to build on the card title and make up the bulk of
-                    the card's content.
-                  </Card.Text>
-                  <Button variant="primary">Go somewhere</Button>
-                </Card.Body>
-              </Card>
             </Container>
             
           </CardColumns>
