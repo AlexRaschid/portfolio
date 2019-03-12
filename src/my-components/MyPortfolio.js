@@ -42,7 +42,8 @@ export class MyPortfolio extends React.Component{
               {this.state.projects.map(
                 (project) => ( 
                   <CardContent key = {project.id} 
-                              title={project.title}/>
+                              title={project.title}
+                              description={project.description}/>
                 ))
               }
             </Container> 
