@@ -16,13 +16,17 @@ export class MyPortfolio extends React.Component{
       }
     }
 
-    //Object.keys(snap.val())]
+    //Object.keys(snap.val())  returns an array of a given object's own property names
     componentDidMount(){
       const rootRef = firebase.database().ref().child("data");
       const projectsRef = rootRef.child("projects");
       
       projectsRef.on('value', (snap) => {
-            this.setState({
+        console.log(Object.values(snap.val()));
+        console.log(Object.values(snap.val())[0].title);
+        console.log(Object.values(snap.val())[1]);
+        console.log(Object.keys(snap.val())); //Projects name in db   
+        this.setState({
                         //Object.values returns arrays with the object values
             projects: [Object.values(snap.val())],
           });
@@ -32,18 +36,29 @@ export class MyPortfolio extends React.Component{
     renderProjects(){
       //This needs to be an array not an object
       console.log(this.state.projects);
-      
+      console.log(this.state.projects.title);
+      //console.log(this.state.projects[0]);
+
+
+      //                  console.log(project),
+      //console.log(index),
+                  
+                  
+
+
       //TODO: Some Renaming at some point
+      //.map Takes an array and iterates over it with a function
+      //this.state.projects project objects
+      //is an array inside an array [[{...},{...}]]
+      //so index never increases past 0 since first array.length is 1
       return(
         <CardColumns>
             <Container>
               {this.state.projects.map(
-                (card, index) => (
-                  <CardContent 
-                    key = {[index]}
-                    
-                    title={card[index].title}
-                  />
+                (project, index) => ( <CardContent 
+                                        key = {project[index].id} 
+                                        title={project[index].title}
+                                      />
                 ))
               }
             </Container> 
