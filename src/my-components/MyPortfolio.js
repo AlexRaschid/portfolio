@@ -22,30 +22,15 @@ export class MyPortfolio extends React.Component{
       const projectsRef = rootRef.child("projects");
       
       projectsRef.on('value', (snap) => {
-        console.log(Object.values(snap.val()));
-        console.log(Object.values(snap.val())[0].title);
-        console.log(Object.values(snap.val())[1]);
         console.log(Object.keys(snap.val())); //Projects name in db   
         this.setState({
-                        //Object.values returns arrays with the object values
-            projects: [Object.values(snap.val())],
+       //Object.values returns arrays with the object values
+            projects: Object.values(snap.val()),
           });
       });
     }
 
     renderProjects(){
-      //This needs to be an array not an object
-      console.log(this.state.projects);
-      console.log(this.state.projects.title);
-      //console.log(this.state.projects[0]);
-
-
-      //                  console.log(project),
-      //console.log(index),
-                  
-                  
-
-
       //TODO: Some Renaming at some point
       //.map Takes an array and iterates over it with a function
       //this.state.projects project objects
@@ -55,10 +40,9 @@ export class MyPortfolio extends React.Component{
         <CardColumns>
             <Container>
               {this.state.projects.map(
-                (project, index) => ( <CardContent 
-                                        key = {project[index].id} 
-                                        title={project[index].title}
-                                      />
+                (project) => ( 
+                  <CardContent key = {project.id} 
+                              title={project.title}/>
                 ))
               }
             </Container> 
@@ -66,11 +50,9 @@ export class MyPortfolio extends React.Component{
       );
     }
 
-
     render(){
         return(
             this.renderProjects()
-
         );
     }
 
