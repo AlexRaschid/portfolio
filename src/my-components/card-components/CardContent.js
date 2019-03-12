@@ -1,8 +1,7 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { Container, Button,
          CardColumns, Card } from 'react-bootstrap';
-import Bootstrap from 'bootstrap/dist/css/bootstrap.css';
+import firebase from '../../firebase.js';
 
 
 
@@ -11,15 +10,18 @@ import Bootstrap from 'bootstrap/dist/css/bootstrap.css';
 export class CardContent extends React.Component{
   constructor(props){
     super(props);
-    //console.log(this.state.projects);
+    this.state = {
+      
+    }
   }
+  
 
     render(){
       console.log(this.props);
 
         return(
           <Card>
-              <Card.Img variant="top" src={this.props.default_img}/>
+              <Card.Img variant="top" src={this.props.imgSrc}/>
               <Card.Body>
                 <Card.Title>{this.props.title}</Card.Title>
                 <Card.Text>
