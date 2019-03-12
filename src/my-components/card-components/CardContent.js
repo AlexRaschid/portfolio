@@ -18,18 +18,17 @@ export class CardContent extends React.Component{
       console.log(this.props);
 
         return(
-        <Card>
-            <Card.Img variant="top" src={this.props.default_img}/>
-            <Card.Body>
-              <Card.Title>{this.props.title}</Card.Title>
-              <Card.Text>
-                Some quick example text to build on the card title and make up the bulk of
-                the card's content.
-              </Card.Text>
-              <Button variant="primary">{this.props.title}</Button>
-            </Card.Body>
-        </Card>        
-
+          <Card>
+              <Card.Img variant="top" src={this.props.default_img}/>
+              <Card.Body>
+                <Card.Title>{this.props.title}</Card.Title>
+                <Card.Text>
+                  Some quick example text to build on the card title and make up the bulk of
+                  the card's content.
+                </Card.Text>
+                <Button variant="primary">{this.props.title}</Button>
+              </Card.Body>
+          </Card>        
         );
 
     }
