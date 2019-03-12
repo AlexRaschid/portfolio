@@ -1,12 +1,15 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { Container, Button,
          CardColumns, Card } from 'react-bootstrap';
-import Bootstrap from 'bootstrap/dist/css/bootstrap.css';
 import {CardContent} from './card-components/CardContent';
 import firebase from '../firebase.js';
 
 
+const rootRef = firebase.database().ref().child("data");
+const projectsRef = rootRef.child("projects");
+
+
+const storage = firebase.storage().ref("images")
 
 export class MyPortfolio extends React.Component{
     constructor(props){
@@ -18,17 +21,26 @@ export class MyPortfolio extends React.Component{
 
     //Object.keys(snap.val())  returns an array of a given object's own property names
     componentDidMount(){
-      const rootRef = firebase.database().ref().child("data");
-      const projectsRef = rootRef.child("projects");
-      
       projectsRef.on('value', (snap) => {
         console.log(Object.keys(snap.val())); //Projects name in db   
         this.setState({
        //Object.values returns arrays with the object values
             projects: Object.values(snap.val()),
+            pathNames: Object.keys(snap.val()),
           });
       });
     }
+
+    getImage (image) {
+      storage.child(`${image}.jpg`).getDownloadURL().then((url) => {
+       
+       this.state[image] = url;
+       console.log(url);
+       console.log(this.state[image]);
+       this.setState(this.state);
+     });
+   }
+ 
 
     renderProjects(){
       //TODO: Some Renaming at some point
@@ -40,10 +52,11 @@ export class MyPortfolio extends React.Component{
         <CardColumns>
             <Container>
               {this.state.projects.map(
-                (project) => ( 
+                (project, index) => ( 
                   <CardContent key = {project.id} 
                               title={project.title}
-                              description={project.description}/>
+                              description={project.description}
+                              imgSrc={this.getImage(this.state.pathNames[index])}/>
                 ))
               }
             </Container> 
