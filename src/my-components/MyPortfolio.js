@@ -8,8 +8,10 @@ import firebase from '../firebase.js';
 const rootRef = firebase.database().ref().child("data");
 const projectsRef = rootRef.child("projects");
 
-
+// Add /projects/ when testing to see if the loop has stopped/ get images
 const storage = firebase.storage().ref("images")
+
+
 
 export class MyPortfolio extends React.Component{
     constructor(props){
@@ -20,7 +22,7 @@ export class MyPortfolio extends React.Component{
     }
 
     //Object.keys(snap.val())  returns an array of a given object's own property names
-    componentDidMount(){
+    componentWillMount(){
       projectsRef.on('value', (snap) => {
         console.log(Object.keys(snap.val())); //Projects name in db   
         this.setState({
@@ -35,10 +37,11 @@ export class MyPortfolio extends React.Component{
       storage.child(`${image}.jpg`).getDownloadURL().then((url) => {
        
        this.state[image] = url;
-       console.log(url);
+       setTimeout(console.log(url), 1200);
        console.log(this.state[image]);
        this.setState(this.state);
-     });
+     }).catch(e=> {})
+     ;
    }
  
 
