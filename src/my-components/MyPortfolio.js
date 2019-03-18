@@ -3,13 +3,14 @@ import { Container, Button,
          CardColumns, Card } from 'react-bootstrap';
 import {CardContent} from './card-components/CardContent';
 import firebase from '../firebase.js';
+import APIS from './APIS.js';
 
 
 const rootRef = firebase.database().ref().child("data");
 const projectsRef = rootRef.child("projects");
 
 // Add /projects/ when testing to see if the loop has stopped/ get images
-const storage = firebase.storage().ref("images")
+//const storage = firebase.storage().ref("images")
 
 
 
@@ -17,12 +18,13 @@ export class MyPortfolio extends React.Component{
     constructor(props){
       super(props);
       this.state = { 
-        projects: [],     
+        projects: [],
+        images: [],   
       }
     }
 
     //Object.keys(snap.val())  returns an array of a given object's own property names
-    componentWillMount(){
+    componentDidMount(){
       projectsRef.on('value', (snap) => {
         console.log(Object.keys(snap.val())); //Projects name in db   
         this.setState({
@@ -32,17 +34,6 @@ export class MyPortfolio extends React.Component{
           });
       });
     }
-
-    getImage (image) {
-      storage.child(`${image}.jpg`).getDownloadURL().then((url) => {
-       
-       this.state[image] = url;
-       setTimeout(console.log(url), 1200);
-       console.log(this.state[image]);
-       this.setState(this.state);
-     }).catch(e=> {})
-     ;
-   }
  
 
     renderProjects(){
@@ -55,11 +46,12 @@ export class MyPortfolio extends React.Component{
         <CardColumns>
             <Container>
               {this.state.projects.map(
-                (project, index) => ( 
+                (project) => ( 
                   <CardContent key = {project.id} 
-                              title={project.title}
-                              description={project.description}
-                              imgSrc={this.getImage(this.state.pathNames[index])}/>
+                               project={project}
+                               pathNames={this.state.pathNames}
+                              //imgSrc={this.getImage(this.state.pathNames[index])}
+                              />
                 ))
               }
             </Container> 
