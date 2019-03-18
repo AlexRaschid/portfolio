@@ -2,6 +2,7 @@ import React from 'react';
 import { Container, Button,
          CardColumns, Card } from 'react-bootstrap';
 import firebase from '../../firebase.js';
+import APIS from '../APIS.js';
 
 
 
@@ -21,13 +22,13 @@ export class CardContent extends React.Component{
 
         return(
           <Card>
-              <Card.Img variant="top" src={this.props.imgSrc}/>
+              <Card.Img variant="top" src={APIS.getImage(this.props.pathName[0])}/>
               <Card.Body>
-                <Card.Title>{this.props.title}</Card.Title>
+                <Card.Title>{this.props.project.title}</Card.Title>
                 <Card.Text>
-                  {this.props.description}
+                  {this.props.project.description}
                 </Card.Text>
-                <Button variant="primary">{this.props.title}</Button>
+                <Button variant="primary">{this.props.project.title}</Button>
               </Card.Body>
           </Card>        
         );
