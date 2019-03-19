@@ -1,17 +1,12 @@
 import React from 'react';
-import { Container, Button,
-         CardColumns, Card } from 'react-bootstrap';
+import { Container,
+         CardColumns } from 'react-bootstrap';
 import {CardContent} from './card-components/CardContent';
 import firebase from '../firebase.js';
-import APIS from './APIS.js';
 
 
 const rootRef = firebase.database().ref().child("data");
 const projectsRef = rootRef.child("projects");
-
-// Add /projects/ when testing to see if the loop has stopped/ get images
-//const storage = firebase.storage().ref("images")
-
 
 
 export class MyPortfolio extends React.Component{
@@ -46,11 +41,11 @@ export class MyPortfolio extends React.Component{
         <CardColumns>
             <Container>
               {this.state.projects.map(
-                (project) => ( 
+                (project, index) => ( 
                   <CardContent key = {project.id} 
                                project={project}
                                pathNames={this.state.pathNames}
-                              //imgSrc={this.getImage(this.state.pathNames[index])}
+                               pathIndex={index}
                               />
                 ))
               }
