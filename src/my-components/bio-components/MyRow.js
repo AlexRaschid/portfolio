@@ -16,8 +16,9 @@ export class MyRow extends React.Component{
                 </Col>
                 <Col md={9} sm={9} xs={7}>
                     <Row>
-                        <p>
-                            Hey im Alex and This is my portfolio website
+                        <p id="myBio">
+                            Hello! My name is Alexander Raschid and this is my portfolio webpage.
+                            Ive been coding for 4 years and im currently  in my Freshmen Year at CUNY Brooklyn College
                         </p>
                     </Row>
                     <Row>
