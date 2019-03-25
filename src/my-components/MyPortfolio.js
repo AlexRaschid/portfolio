@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container,
          CardColumns } from 'react-bootstrap';
-import {CardContent} from './card-components/CardContent';
+import {CardContent} from './portfolio-components/CardContent';
 import firebase from '../firebase.js';
 
 
