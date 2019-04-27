@@ -18,7 +18,8 @@ export default class App extends Component {
     return (
       //<MyNavbar default_image={default_img}/>
       //<MyPortfolio default_img={default_img}/>
-      //ToDO: Add Default dropdown to display projects, but have two other tabs, 3 total, that are my contact and resume/cd    
+      //ToDO: Two other tabs, 3 total, that are my contact and resume/cd  
+        //ToDo: Make Buttons uniform color/ menuButtons to have portfolio as preselected  
       <Container fluid id="main_container">        
           
           
