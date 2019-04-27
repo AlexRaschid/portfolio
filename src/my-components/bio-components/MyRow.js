@@ -23,10 +23,10 @@ export class MyRow extends React.Component{
                     </Row>
                     <Row>
                         <Col className='bioButtons' xs={6}>
-                            <Button href="www.github.com/alexraschid">Link</Button>
+                            <Button variant="outline-dark" href="www.github.com/alexraschid">Link</Button>
                         </Col>
-                        <Col className='bioButtons' xs={6}>
-                            <Button>Resume</Button>
+                        <Col variant="outline-dark"className='bioButtons' xs={6}>
+                            <Button variant="outline-dark">Resume</Button>
                         </Col >
                     </Row>
                 
