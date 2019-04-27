@@ -1,8 +1,8 @@
 //Imports
-import React, { Component } from 'react';
+import React, { Component  } from 'react';
 import './App.css';
 import Bootstrap from 'bootstrap/dist/css/bootstrap.css';
-import {Container} from 'react-bootstrap';
+import {Container, Button, Col, Row} from 'react-bootstrap';
 //import { GoMarkGithub } from 'react-icons/go';
 
 import {MyNavbar} from './my-components/MyNavbar.js';
@@ -18,7 +18,7 @@ export default class App extends Component {
     return (
       //<MyNavbar default_image={default_img}/>
       //<MyPortfolio default_img={default_img}/>
-          
+      //ToDO: Add Default dropdown to display projects, but have two other tabs, 3 total, that are my contact and resume/cd    
       <Container fluid id="main_container">        
           
           
@@ -26,6 +26,22 @@ export default class App extends Component {
            
 
             <MyBio default_img={default_img}/>
+            
+            <Row id="menuBar">
+
+              <Col className="menuBarButton">
+                <Button variant="outline-dark" className="MyButton">Portfolio</Button>
+              </Col>
+              <Col className="menuBarButton">
+                <Button variant="outline-dark" className="MyButton">Resume/CV</Button>
+              </Col>
+              <Col className="menuBarButton">
+                <Button variant="outline-dark" className="MyButton">Contact</Button>
+              </Col>
+
+            </Row>
+            
+            
 
             <MyPortfolio default_img={default_img} />
 
