@@ -37,7 +37,7 @@ export class CardContent extends React.Component{
                 <Card.Text>
                   {this.props.project.description}
                 </Card.Text>
-                <Button variant="primary">{this.props.project.title}</Button>
+                <Button src={this.props.project.repositoryURL} variant="primary">Github</Button>
               </Card.Body>
           </Card>        
         );
