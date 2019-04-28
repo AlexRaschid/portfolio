@@ -3,11 +3,11 @@ import React, { Component  } from 'react';
 import './App.css';
 import Bootstrap from 'bootstrap/dist/css/bootstrap.css';
 import {Container, Button, Col, Row} from 'react-bootstrap';
-//import { GoMarkGithub } from 'react-icons/go';
-
 import {MyNavbar} from './my-components/MyNavbar.js';
 import {MyBio} from './my-components/MyBio.js';
 import {MyPortfolio} from './my-components/MyPortfolio.js';
+import {MyResumeCV} from './my-components/MyResumeCV.js';
+import {MyContact} from './my-components/MyContact.js';
 
 
 
@@ -16,10 +16,16 @@ var default_img = "https://avatars3.githubusercontent.com/u/9421693?s=400&u=71ab
 export default class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {showPortfolio: false};
+    this.state = {
+      showPortfolio: true ? true: false,
+      showResumeCV: false,
+      showContact: false
+    };
 
     // This binding is necessary to make `this` work in the callback
     this.renderPortfolio = this.renderPortfolio.bind(this);
+    this.renderResumeCV = this.renderResumeCV.bind(this);
+    this.renderContact = this.renderContact.bind(this);
   }
 
 
@@ -27,6 +33,27 @@ export default class App extends Component {
     console.log("Portfolio clicked!");
     this.setState({
       showPortfolio: !this.state.showPortfolio,
+      showResumeCV: false,
+      showContact: false,
+    })
+
+  }
+
+  renderResumeCV(){
+    console.log("ResumeCV clicked!");
+    this.setState({
+      showPortfolio: false,
+      showResumeCV: !this.state.showResumeCV,
+      showContact: false,
+    })
+
+  }
+  renderContact(){
+    console.log("Contact clicked!");
+    this.setState({
+      showPortfolio: false,
+      showResumeCV: false,
+      showContact: !this.state.showContact,
     })
 
   }
@@ -49,16 +76,18 @@ export default class App extends Component {
                 <Button onClick={this.renderPortfolio} variant="outline-dark" className="MyButton">Portfolio</Button>
               </Col>
               <Col className="menuBarButton">
-                <Button variant="outline-dark" className="MyButton">Resume/CV</Button>
+                <Button onClick={this.renderResumeCV} variant="outline-dark" className="MyButton">Resume/CV</Button>
               </Col>
               <Col className="menuBarButton">
-                <Button variant="outline-dark" className="MyButton">Contact</Button>
+                <Button onClick={this.renderContact} variant="outline-dark" className="MyButton">Contact</Button>
               </Col>
 
             </Row>
 
             <Row id="brDisplay">
             { this.state.showPortfolio ? <MyPortfolio default_img={default_img} /> : null }
+            { this.state.showResumeCV ? <MyResumeCV default_img={default_img} /> : null }
+            { this.state.showContact ? <MyContact default_img={default_img} /> : null }
             </Row>
 
             
