@@ -26,7 +26,7 @@ export default class App extends Component {
   renderPortfolio(){
     console.log("Portfolio clicked!");
     this.setState({
-      showPortfolio: true,
+      showPortfolio: !this.state.showPortfolio,
     })
 
   }
@@ -47,7 +47,6 @@ export default class App extends Component {
 
               <Col className="menuBarButton">
                 <Button onClick={this.renderPortfolio} variant="outline-dark" className="MyButton">Portfolio</Button>
-                
               </Col>
               <Col className="menuBarButton">
                 <Button variant="outline-dark" className="MyButton">Resume/CV</Button>
