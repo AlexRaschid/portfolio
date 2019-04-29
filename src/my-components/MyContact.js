@@ -1,8 +1,5 @@
 import React from 'react';
-import { Container,
-         CardColumns } from 'react-bootstrap';
-import {CardContent} from './portfolio-components/CardContent';
-
+import {Container} from 'react-bootstrap';
 
 export class MyContact extends React.Component{
     render(){
