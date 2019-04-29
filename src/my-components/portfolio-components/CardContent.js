@@ -13,12 +13,12 @@ export class CardContent extends React.Component{
   }
 
   getImage (image) {
-    storage.child(`${image}.jpg`).getDownloadURL().then((url) => {
+    storage.child(`${image}.jpg`).getDownloadURL().then((url) => { //gets the url
     console.log(url) 
-    this.state.image = url;
+    this.state.image = url; 
     console.log(this.state.image);
-     this.setState(this.state);
-   }).catch(e=> {})
+     this.setState(this.state); //sets state with new url
+   }).catch(e=> {}) //Catch errors?
    ;
  }
 
