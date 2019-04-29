@@ -11,7 +11,6 @@ import {MyContact} from './my-components/MyContact.js';
 
 
 
-var default_img = "https://avatars3.githubusercontent.com/u/9421693?s=400&u=71ab55e0bb4775a84bddbf214880dd7ebec78430&v=4";
 //the App
 export default class App extends Component {
   constructor(props) {
@@ -68,7 +67,7 @@ export default class App extends Component {
         //ToDo: Make Buttons uniform color/ menuButtons to have portfolio as preselected  
       <Container fluid id="main_container">        
       
-            <MyBio default_img={default_img}/>
+            <MyBio/>
             
             <Row id="menuBar">
 
@@ -85,9 +84,9 @@ export default class App extends Component {
             </Row>
 
             <Row id="brDisplay">
-            { this.state.showPortfolio ? <MyPortfolio default_img={default_img} /> : null }
-            { this.state.showResumeCV ? <MyResumeCV default_img={default_img} /> : null }
-            { this.state.showContact ? <MyContact default_img={default_img} /> : null }
+            { this.state.showPortfolio ? <MyPortfolio/> : null }
+            { this.state.showResumeCV ? <MyResumeCV/> : null }
+            { this.state.showContact ? <MyContact/> : null }
             </Row>
 
             
