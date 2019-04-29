@@ -1,5 +1,5 @@
 import React from 'react';
-import {Container, Row} from 'react-bootstrap';
+import {Container, Row, Col, Button} from 'react-bootstrap';
 import { Document, Page } from 'react-pdf';
 
 import firebase from '../firebase.js';
@@ -12,6 +12,7 @@ export class MyResumeCV extends React.Component{
         this.state = {
             numPages: null,
             pageNumber: 1,
+            scale: 1.0,
             
         }
         console.log(this.state);
@@ -31,7 +32,6 @@ export class MyResumeCV extends React.Component{
             console.log(url);
             this.state.MyResume = url;
             this.setState(this.state);
-
         });
     }
     
@@ -39,11 +39,28 @@ export class MyResumeCV extends React.Component{
         return(
             <Container>
                 <Row>
-                    <Document file={this.state.MyResume}
-                              onDocumentLoad={this.onDocumentLoad}>
-                        <Page pageNumber={1} />
+                    <Col md={9} sm={9} xs={12}>
+                            <Row>
+                                <Col md={6} sm={6} xs={12}>
+                                    <Button id="dlResume">Download Resume</Button>
+                                </Col>
+                                <Col md={6} sm={6} xs={6}>
+                                    <Button id="dlCV">Download CV</Button>
+                                </Col>
+                            </Row>
+                    </Col>
+                    <Col md={3} sm={3} xs={12}>
+                        <Document file={this.state.MyResume}
+                                onDocumentLoad={this.onDocumentLoad}>
+                            <Page
+                                pageNumber={this.state.pageNumber}
+                                onLoadSuccess={this.onPageLoad}
+                                scale={this.state.scale}
+                            />
+                        
+                        </Document>
+                    </Col>
                     
-                    </Document>
                 </Row>
             </Container>
         );
