@@ -14,12 +14,13 @@ export class MyBio extends React.Component{
     }
     
     componentDidMount(){
+        //ToDo: Pass db file info from props and not hardcoded
         //gets pic from firebase
         firebase.storage().ref("images/other/")
                           .child(`MyMainPic.jpg`)
                           .getDownloadURL()
                           .then((url) => {
-            this.state.pfp = url;
+            this.state.MyMainPic = url;
             this.setState(this.state);
 
         });
@@ -33,7 +34,7 @@ export class MyBio extends React.Component{
               <Container>
                 <Row>
                     <Col md={3} sm={3} xs={12}>
-                        <Image fluid src={this.state.pfp} roundedCircle />
+                        <Image fluid src={this.state.MyMainPic} roundedCircle />
                     </Col>
                     <Col md={9} sm={9} xs={12}>
                         <Row>
