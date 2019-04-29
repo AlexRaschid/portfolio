@@ -1,6 +1,6 @@
 import React from 'react';
-import {Container} from 'react-bootstrap';
-
+import {Container, Row} from 'react-bootstrap';
+import { Document } from 'react-pdf'
 
 export class MyResumeCV extends React.Component{
     render(){
