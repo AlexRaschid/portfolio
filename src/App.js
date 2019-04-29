@@ -71,22 +71,28 @@ export default class App extends Component {
             
             <Row id="menuBar">
 
-              <Col className="menuBarButton">
+              <Col md={4} sm={4} xs={4} className="menuBarButton">
                 <Button onClick={this.renderPortfolio} variant="outline-dark" className="MyButton">Portfolio</Button>
               </Col>
-              <Col className="menuBarButton">
+              <Col md={4} sm={4} xs={4} className="menuBarButton">
                 <Button onClick={this.renderResumeCV} variant="outline-dark" className="MyButton">Resume/CV</Button>
               </Col>
-              <Col className="menuBarButton">
+              <Col md={4} sm={4} xs={4} className="menuBarButton">
                 <Button onClick={this.renderContact} variant="outline-dark" className="MyButton">Contact</Button>
               </Col>
 
             </Row>
 
-            <Row id="brDisplay">
+            <Row id="displayPortfolio">
             { this.state.showPortfolio ? <MyPortfolio/> : null }
-            { this.state.showResumeCV ? <MyResumeCV/> : null }
-            { this.state.showContact ? <MyContact/> : null }
+            </Row>
+
+            <Row id="displayResumeCV">
+              { this.state.showResumeCV ? <MyResumeCV/> : null }
+            </Row>
+            
+            <Row id="displayContact">
+              { this.state.showContact ? <MyContact/> : null }
             </Row>
 
             
