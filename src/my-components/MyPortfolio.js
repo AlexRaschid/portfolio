@@ -1,10 +1,10 @@
 import React from 'react';
-import { Container,
-         CardColumns } from 'react-bootstrap';
+import { Container, CardColumns } from 'react-bootstrap';
 import {CardContent} from './portfolio-components/CardContent';
 import firebase from '../firebase.js';
 
 
+//Firebase References for the realtime-db and storage
 const rootRef = firebase.database().ref().child("data");
 const projectsRef = rootRef.child("projects");
 
@@ -18,14 +18,13 @@ export class MyPortfolio extends React.Component{
       }
     }
 
-    //Object.keys(snap.val())  returns an array of a given object's own property names
+    
     componentDidMount(){
       projectsRef.on('value', (snap) => {
         console.log(Object.keys(snap.val())); //Projects name in db   
-        this.setState({
-       //Object.values returns arrays with the object values
-            projects: Object.values(snap.val()),
-            pathNames: Object.keys(snap.val()),
+        this.setState({               
+            projects: Object.values(snap.val()), //Object.values - returns arrays with the object values
+            pathNames: Object.keys(snap.val()), //Object.keys(snap.val()) - returns an array of a given object's own property names
           });
       });
     }
