@@ -1,7 +1,30 @@
 import React from 'react';
 import {Container, Jumbotron} from 'react-bootstrap';
 import { Row, Col, Image, Button } from 'react-bootstrap';
+
+import firebase from '../firebase.js';
+
+
+
+
 export class MyBio extends React.Component{
+    constructor(props){
+        super(props);
+        this.state = {}
+    }
+    
+    componentDidMount(){
+        //gets pic from firebase
+        firebase.storage().ref("images/other/")
+                          .child(`MyMainPic.jpg`)
+                          .getDownloadURL()
+                          .then((url) => {
+            this.state.pfp = url;
+            this.setState(this.state);
+
+        });
+    }
+    
     render(){
         //ToDo: Replace this.props.default_img with actual main picture
         //ToDo: Feed Bio in from db?
@@ -10,7 +33,7 @@ export class MyBio extends React.Component{
               <Container>
                 <Row>
                     <Col md={3} sm={3} xs={12}>
-                        <Image fluid src="https://www.petmd.com/sites/default/files/small-kitten-walking-towards_127900829_0.jpg" roundedCircle />
+                        <Image fluid src={this.state.pfp} roundedCircle />
                     </Col>
                     <Col md={9} sm={9} xs={12}>
                         <Row>
