@@ -5,7 +5,7 @@ export class MyContact extends React.Component{
     render(){
         return(
             <Container>
-                <h1>Contact Placeholder</h1>
+                <h1>Contact</h1>
             </Container>
         );
     }
