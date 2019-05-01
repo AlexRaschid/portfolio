@@ -5,9 +5,10 @@ import Bootstrap from 'bootstrap/dist/css/bootstrap.css';
 import {Container, Button, Col, Row} from 'react-bootstrap';
 import {MyNavbar} from './my-components/MyNavbar.js';
 import {MyBio} from './my-components/MyBio.js';
-import {MyPortfolio} from './my-components/MyPortfolio.js';
+import {MyWork} from './my-components/MyWork.js';
 import {MyResumeCV} from './my-components/MyResumeCV.js';
 import {MyContact} from './my-components/MyContact.js';
+import {MyHeader} from './my-components/MyHeader.js';
 
 
 
@@ -18,7 +19,7 @@ export default class App extends Component {
     this.state = {
       showPortfolio: true ? true: false,
       showResumeCV: false,
-      showContact: false
+      showContact: true
     };
 
     // This binding is necessary to make `this` work in the callback
@@ -66,25 +67,11 @@ export default class App extends Component {
       //ToDO: Two other tabs, 3 total, that are my contact and resume/cd  
         //ToDo: Make Buttons uniform color/ menuButtons to have portfolio as preselected  
       <Container fluid id="main_container">        
-      
-            <MyBio/>
             
-            <Row id="menuBar">
-
-              <Col md={4} sm={4} xs={4} className="menuBarButton">
-                <Button onClick={this.renderPortfolio} variant="outline-dark" className="MyButton">Portfolio</Button>
-              </Col>
-              <Col md={4} sm={4} xs={4} className="menuBarButton">
-                <Button onClick={this.renderResumeCV} variant="outline-dark" className="MyButton">Resume/CV</Button>
-              </Col>
-              <Col md={4} sm={4} xs={4} className="menuBarButton">
-                <Button onClick={this.renderContact} variant="outline-dark" className="MyButton">Contact</Button>
-              </Col>
-
-            </Row>
-
-            <Row id="displayPortfolio">
-            { this.state.showPortfolio ? <MyPortfolio/> : null }
+            <MyHeader></MyHeader>
+            <MyBio/>
+            <Row id="displayWork">
+            { this.state.showPortfolio ? <MyWork/> : null }
             </Row>
 
             <Row id="displayResumeCV">
