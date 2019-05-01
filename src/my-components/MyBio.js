@@ -30,23 +30,25 @@ export class MyBio extends React.Component{
         //ToDo: Replace this.props.default_img with actual main picture
         //ToDo: Feed Bio in from db?
         return(
-            <Jumbotron id="my_bio">
+            
               <Container>
-                <Row>
-                    <Col md={3} sm={3} xs={12}>
-                        <Image fluid src={this.state.MyMainPic} roundedCircle />
-                    </Col>
-                    <Col md={9} sm={9} xs={12}>
-                        <Row>
-                            <p id="myBio">
-                                Hello! My name is Alexander Raschid and this is my portfolio webpage.
-                                Ive been coding for 4 years and im currently  in my Freshmen Year at CUNY Brooklyn College
-                            </p>
-                        </Row>
-                    </Col>
-                </Row>
+                  <h1>About Me</h1>
+                    <Row>
+                        <Col md={3} sm={3} xs={5}>
+                            <Image fluid src={this.state.MyMainPic} roundedCircle />
+                        </Col>
+                        <Col md={9} sm={9} xs={7}>
+                            <Row>
+                                <p id="myBio">
+                                    Hello! My name is Alexander Raschid and this is my portfolio webpage.
+                                    Ive been coding for 4 years and im currently  in my Freshmen Year at CUNY Brooklyn College
+                                </p>
+                            </Row>
+                        </Col>
+                    </Row>
+                
               </Container>
-            </Jumbotron>
+            
 
         );
     }
