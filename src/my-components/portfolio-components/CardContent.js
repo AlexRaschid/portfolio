@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Card } from 'react-bootstrap';
+import { Button, Card, Container, Col, Row } from 'react-bootstrap';
 import firebase from '../../firebase.js';
 
 const storage = firebase.storage().ref("images/projects/")
@@ -30,15 +30,34 @@ export class CardContent extends React.Component{
     render(){
       console.log(this.state.image);
         return(
+          
+          
+          
+          
           <Card>
+
               <Card.Img variant="top" src={this.state.image}/>
-              <Card.Body>
-                <Card.Title>{this.props.project.title}</Card.Title>
-                <Card.Text>
-                  {this.props.project.description}
-                </Card.Text>
-                <Button src={this.props.project.repositoryURL} variant="primary">Github</Button>
-              </Card.Body>
+              <Card.ImgOverlay>
+                <Container>
+                  <Row>
+                    <Col xs={6}>
+                      <Button src={this.props.project.repositoryURL} variant="primary">Demo</Button>
+                    </Col>
+                    <Col xs={6}>
+                      <Button src={this.props.project.repositoryURL} variant="primary">Code</Button>
+                    </Col>
+                  </Row>
+                  
+                </Container>
+                
+              </Card.ImgOverlay>
+                <Card.Body>
+                  <Card.Title>{this.props.project.title}</Card.Title>
+                  <Card.Text>
+                    {this.props.project.description}
+                  </Card.Text>
+                </Card.Body>
+              
           </Card>        
         );
     }
