@@ -39,10 +39,16 @@ export class MyBio extends React.Component{
                         </Col>
                         <Col md={9} sm={9} xs={7}>
                             <Row>
-                                <p id="myBio">
-                                    Hello! My name is Alexander Raschid and this is my portfolio webpage.
-                                    Ive been coding for 4 years and im currently  in my Freshmen Year at CUNY Brooklyn College
-                                </p>
+                                <Row>
+                                    <h2>Hi, I'm Alexander Raschid</h2>
+                                </Row>
+                                <Row>
+                                    <p id="myBio">
+                                        Aspiring Web Developer and Full-Time College Student from NYC.
+                                    </p>
+                                    <p>Ive been coding since 13 and I'm not stopping anytime soon.</p>
+                                </Row>
+
                             </Row>
                         </Col>
                     </Row>
